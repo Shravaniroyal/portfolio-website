@@ -1695,4 +1695,396 @@ transition-medium{
     border-radius: var(--border-radius);
     color: var(--text-primary);
     font-size: 1rem;
-    transition: var(--
+
+
+    /* ===== RESPONSIVE ENHANCEMENTS FOR EXISTING CSS ===== */
+
+/* 1. Add viewport units and clamp() for better scaling */
+:root {
+    /* Enhanced responsive font sizes using clamp() */
+    --hero-title-size: clamp(2rem, 8vw, 4rem);
+    --section-title-size: clamp(1.8rem, 6vw, 3rem);
+    --body-text-size: clamp(1rem, 2.5vw, 1.2rem);
+    --nav-text-size: clamp(0.9rem, 2vw, 1rem);
+    
+    /* Responsive spacing */
+    --section-padding-responsive: clamp(60px, 10vh, 100px) 0;
+    --container-padding: clamp(15px, 5vw, 20px);
+}
+
+/* 2. Fix navbar positioning and mobile menu */
+.navbar {
+    /* Ensure navbar works on all devices */
+    width: 100%;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px); /* Safari support */
+}
+
+.nav-brand {
+    /* Remove fixed positioning */
+    position: static;
+    left: auto;
+}
+
+.nav-brand .brand-text {
+    /* Remove fixed left positioning */
+    left: auto;
+    font-size: var(--nav-text-size);
+}
+
+.nav-menu {
+    /* Fix menu positioning */
+    position: static;
+    right: auto;
+}
+
+/* 3. Enhanced mobile navigation */
+@media (max-width: 968px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: rgba(10, 10, 15, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        width: 100%;
+        text-align: center;
+        transition: var(--transition-fast);
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.3);
+        padding: 2rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 999;
+        height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+
+/* 4. Responsive hero section */
+.hero-title {
+    font-size: var(--hero-title-size);
+}
+
+.hero-description {
+    font-size: var(--body-text-size);
+}
+
+.section-title {
+    font-size: var(--section-title-size);
+}
+
+/* 5. Responsive grid fixes */
+@media (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 300px;
+        margin: 2rem auto;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .social-links {
+        justify-content: center;
+        gap: 1rem;
+    }
+}
+
+/* 6. Fix container width and padding */
+.container {
+    padding: 0 var(--container-padding);
+    width: 100%;
+    max-width: var(--container-width);
+}
+
+/* 7. Responsive avatar scaling */
+.avatar-container {
+    width: clamp(200px, 50vw, 400px);
+    height: clamp(200px, 50vw, 400px);
+}
+
+.avatar-circle {
+    width: clamp(150px, 35vw, 250px);
+    height: clamp(150px, 35vw, 250px);
+}
+
+.avatar-icon {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+}
+
+/* 8. Responsive floating tech tags */
+.floating-tech {
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    padding: clamp(6px, 2vw, 8px) clamp(12px, 3vw, 16px);
+}
+
+/* 9. Fix form responsiveness */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    font-size: var(--body-text-size);
+    padding: clamp(12px, 3vw, 15px);
+}
+
+.contact-form-container {
+    padding: clamp(1.5rem, 4vw, 2rem);
+}
+
+/* 10. Responsive cards and sections */
+.skill-category,
+.project-card .project-content,
+.experience-card {
+    padding: clamp(1.5rem, 4vw, 2rem);
+}
+
+.stat-card {
+    padding: clamp(1.5rem, 4vw, 2rem);
+}
+
+.stat-number {
+    font-size: clamp(2rem, 6vw, 2.5rem);
+}
+
+/* 11. Footer responsiveness */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* 12. Fix timeline on mobile */
+@media (max-width: 768px) {
+    .timeline {
+        padding-left: 1rem;
+    }
+
+    .timeline-marker {
+        left: -1.2rem;
+    }
+
+    .experience-card {
+        margin-left: 1rem;
+    }
+
+    .company-logo {
+        position: static;
+        margin-bottom: 1rem;
+        align-self: center;
+    }
+}
+
+/* 13. Responsive tech stack tags */
+.tech-stack {
+    gap: clamp(0.5rem, 2vw, 1rem);
+}
+
+.tech-tag {
+    font-size: clamp(0.7rem, 2vw, 0.8rem);
+    padding: clamp(4px, 1vw, 6px) clamp(8px, 2vw, 12px);
+}
+
+/* 14. Project links responsive */
+.project-links {
+    flex-wrap: wrap;
+    gap: clamp(0.5rem, 2vw, 1rem);
+}
+
+.project-link {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+/* 15. Role container responsiveness */
+.role-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+}
+
+.role-rotating {
+    min-width: clamp(150px, 30vw, 200px);
+    height: clamp(1.5rem, 4vw, 1.8rem);
+}
+
+/* 16. Particles responsiveness */
+@media (max-width: 768px) {
+    .particle {
+        width: 3px;
+        height: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .particle {
+        width: 2px;
+        height: 2px;
+    }
+}
+
+/* 17. Neural network scaling */
+@media (max-width: 768px) {
+    .node {
+        width: 8px;
+        height: 8px;
+    }
+
+    .connection {
+        height: 1px;
+    }
+}
+
+/* 18. Social links scaling */
+.social-link {
+    width: clamp(40px, 8vw, 50px);
+    height: clamp(40px, 8vw, 50px);
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+/* 19. Scroll indicator responsiveness */
+.scroll-indicator {
+    bottom: clamp(20px, 5vh, 30px);
+}
+
+.scroll-arrow {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+
+/* 20. Fix section padding */
+section {
+    padding: var(--section-padding-responsive);
+}
+
+/* 21. High DPI display support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .avatar-circle,
+    .project-card,
+    .skill-category {
+        border-width: 0.5px;
+    }
+}
+
+/* 22. Landscape mobile orientation */
+@media (max-width: 896px) and (orientation: landscape) and (max-height: 500px) {
+    .hero {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+
+    .hero-content {
+        gap: 2rem;
+    }
+
+    .avatar-container {
+        width: 200px;
+        height: 200px;
+    }
+
+    .avatar-circle {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* 23. Ultra-wide screen support */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+/* 24. Fix overflow issues */
+.hero, .about, .skills, .projects, .experience, .contact {
+    overflow-x: hidden;
+}
+
+/* 25. Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* 26. Better touch targets */
+@media (pointer: coarse) {
+    .btn, .nav-link, .social-link {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* 27. Print media adjustments */
+@media print {
+    .navbar, .particles-container, .scroll-indicator, .hamburger {
+        display: none !important;
+    }
+    
+    .hero, .about, .skills, .projects {
+        page-break-inside: avoid;
+    }
+}
