@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and viewport settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title -->
+    <title>Facial Expression Recognition - AI Project | Shravani R S</title>
+    
+<link rel="stylesheet" href="Human Emotion Detection.css">
+
+    <!-- Link to external CSS file -->
+    <link rel="C:\Users\Shravani\OneDrive\New folder\OneDrive\Desktop\portifolio\face.css" href="C:\Users\Shravani\OneDrive\New folder\OneDrive\Desktop\portifolio\face.css">
+    
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="C:\Users\Shravani\OneDrive\New folder\OneDrive\Desktop\portifolio\face.css">
+    
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- AOS (Animate On Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="C:\Users\Shravani\OneDrive\New folder\OneDrive\Desktop\portifolio\face.css">
+</head>
+<body>
+
+    <script src="Human Emotion Detection.js"></script>
+    <!-- Animated background particles container -->
+    <div class="particles-container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Navigation header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <!-- Back to portfolio link -->
+                <a href="shravani.html" class="nav-brand">
+                    <i class="fas fa-arrow-left"></i>
+                    <span class="brand-text">Back to Portfolio</span>
+                </a>
+                
+                <!-- Project navigation menu -->
+                <ul class="nav-menu">
+                    <li><a href="#overview" class="nav-link">Overview</a></li>
+                    <li><a href="#technical" class="nav-link">Technical</a></li>
+                    <li><a href="#implementation" class="nav-link">Implementation</a></li>
+                    <li><a href="#results" class="nav-link">Results</a></li>
+                    <!-- <li><a href="#team" class="nav-link">Team</a></li> -->
+                </ul>
+                
+                <!-- Mobile menu toggle -->
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero section with project introduction -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <!-- Project title and description -->
+                <div class="hero-text" data-aos="fade-up">
+                    <h1 class="project-title">
+                        <span class="title-main">Facial Expression</span>
+                        <span class="title-accent">Recognition</span>
+                    </h1>
+                    <p class="project-subtitle">Advanced AI System for Human Emotion Detection</p>
+                    <p class="project-description">
+                        A comprehensive machine learning solution utilizing Convolutional Neural Networks 
+                        to accurately identify and classify human facial expressions in real-time, 
+                        achieving 90% accuracy across multiple emotion categories.
+                    </p>
+                    
+                    <!-- Project stats -->
+                    <div class="project-stats">
+                        <div class="stat-item st">
+                            <span class="stat-number">90%</span>
+                            <span class="stat-label">Accuracy</span>
+                        </div>
+                        <div class="stat-item st">
+                            <span class="stat-number">7</span>
+                            <span class="stat-label">Emotions</span>
+                        </div>
+                        <div class="stat-item st">
+                            <span class="stat-number">CNN</span>
+                            <span class="stat-label">Architecture</span>
+                        </div>
+                        <div class="stat-item st1">
+                            <span class="stat-number">Real-time</span>
+                            <span class="stat-label">Processing</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project visual representation -->
+                <div class="hero-visual" data-aos="fade-left">
+                    <div class="emotion-wheel">
+                        <!-- Central face icon -->
+                        <div class="center-face">
+                            <i class="fas fa-smile-beam"></i>
+                        </div>
+                        <!-- Emotion indicators around the wheel -->
+                        <div class="emotion-indicator" data-emotion="happy">
+                            <i class="fas fa-smile"></i>
+                            <span>Happy</span>
+                        </div>
+                        <div class="emotion-indicator" data-emotion="sad">
+                            <i class="fas fa-frown"></i>
+                            <span>Sad</span>
+                        </div>
+                        <div class="emotion-indicator" data-emotion="angry">
+                            <i class="fas fa-angry"></i>
+                            <span>Angry</span>
+                        </div>
+                        <div class="emotion-indicator" data-emotion="surprise">
+                            <i class="fas fa-surprise"></i>
+                            <span>Surprise</span>
+                        </div>
+                        <div class="emotion-indicator" data-emotion="fear">
+                            <i class="fas fa-grimace"></i>
+                            <span>Fear</span>
+                        </div>
+                        <div class="emotion-indicator" data-emotion="disgust">
+                            <i class="fas fa-meh-rolling-eyes"></i>
+                            <span>Disgust</span>
+                        </div>
+                        <div class="emotion-indicator" data-emotion="neutral">
+                            <i class="fas fa-meh"></i>
+                            <span>Neutral</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project overview section -->
+    <section id="overview" class="overview">
+        <div class="container">
+            <!-- Section header -->
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Project Overview</h2>
+                <p class="section-subtitle">Understanding human emotions through advanced computer vision</p>
+            </div>
+            
+            <!-- Overview content grid -->
+            <div class="overview-grid">
+                <!-- Project description -->
+                <div class="overview-content" data-aos="fade-right">
+                    <h3>About the Project</h3>
+                    <p>
+                        Facial Expression Recognition (FER) is a vital aspect of human-computer interaction, 
+                        enabling systems to interpret and respond to human emotions effectively. This project 
+                        presents a comprehensive approach to FER, integrating advanced machine learning 
+                        techniques and deep learning models to achieve high accuracy in emotion detection.
+                    </p>
+                    <p>
+                        By leveraging Convolutional Neural Networks (CNNs), we enhanced the system's ability 
+                        to recognize subtle facial expressions in real-time, providing a robust solution for 
+                        various applications ranging from healthcare to security.
+                    </p>
+                    
+                    <!-- Key features list -->
+                    <div class="features-list">
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Real-time emotion detection</li>
+                            <li><i class="fas fa-check"></i> High accuracy CNN model</li>
+                            <li><i class="fas fa-check"></i> Multi-emotion classification</li>
+                            <li><i class="fas fa-check"></i> Robust preprocessing pipeline</li>
+                            <li><i class="fas fa-check"></i> Cross-demographic performance</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Project objectives -->
+                <div class="objectives-card" data-aos="fade-left">
+                    <h3>Project Objectives</h3>
+                    <div class="objective-item">
+                        <div class="objective-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <div class="objective-content">
+                            <h4>High Accuracy Detection</h4>
+                            <p>Achieve 90%+ accuracy in facial expression classification across multiple emotion categories</p>
+                        </div>
+                    </div>
+                    <div class="objective-item">
+                        <div class="objective-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="objective-content">
+                            <h4>Real-time Processing</h4>
+                            <p>Enable real-time emotion recognition for interactive applications and live monitoring</p>
+                        </div>
+                    </div>
+                    <div class="objective-item">
+                        <div class="objective-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="objective-content">
+                            <h4>Cross-demographic Robustness</h4>
+                            <p>Ensure consistent performance across different age groups, genders, and ethnicities</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical specifications section -->
+    <section id="technical" class="technical">
+        <div class="container">
+            <!-- Section header -->
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Technical Architecture</h2>
+                <p class="section-subtitle">Deep learning powered emotion recognition system</p>
+            </div>
+            
+            <!-- Technical content -->
+            <div class="technical-content">
+                <!-- System architecture diagram -->
+                <div class="architecture-flow" data-aos="fade-up">
+                    <h3>System Architecture Flow</h3>
+                    <div class="flow-diagram">
+                        <div class="flow-step">
+                            <div class="step-icon">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <h4>Input Capture</h4>
+                            <p>Real-time video/image input</p>
+                        </div>
+                        <div class="flow-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h4>Face Detection</h4>
+                            <p>Haar Cascade detection</p>
+                        </div>
+                        <div class="flow-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <h4>Preprocessing</h4>
+                            <p>Normalization & resizing</p>
+                        </div>
+                        <div class="flow-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h4>CNN Model</h4>
+                            <p>Feature extraction & classification</p>
+                        </div>
+                        <div class="flow-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="flow-step">
+                            <div class="step-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Output</h4>
+                            <p>Emotion prediction</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Technical specifications grid -->
+                <div class="tech-specs-grid">
+                    <!-- CNN Architecture details -->
+                    <div class="spec-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="spec-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <h4>CNN Architecture</h4>
+                        <ul>
+                            <li>Input Layer: 48×48 grayscale images</li>
+                            <li>Convolutional Layers: Feature extraction</li>
+                            <li>Pooling Layers: Dimensionality reduction</li>
+                            <li>Fully Connected: Classification</li>
+                            <li>Output: 7 emotion classes</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Technologies used -->
+                    <div class="spec-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="spec-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h4>Technologies Used</h4>
+                        <ul>
+                            <li>Python - Primary language</li>
+                            <li>TensorFlow/Keras - Deep learning</li>
+                            <li>OpenCV - Computer vision</li>
+                            <li>NumPy - Numerical computing</li>
+                            <li>Matplotlib - Visualization</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Performance metrics -->
+                    <div class="spec-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="spec-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h4>Performance Metrics</h4>
+                        <ul>
+                            <li>Overall Accuracy: 90%</li>
+                            <li>Precision: 0.89</li>
+                            <li>Recall: 0.88</li>
+                            <li>F1-Score: 0.88</li>
+                            <li>Processing: Real-time</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation details section -->
+    <section id="implementation" class="implementation">
+        <div class="container">
+            <!-- Section header -->
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Implementation Details</h2>
+                <p class="section-subtitle">From concept to working solution</p>
+            </div>
+            
+            <!-- Implementation timeline -->
+            <div class="implementation-timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Data Collection & Preprocessing</h4>
+                        <p>
+                            Gathered comprehensive facial expression datasets with diverse demographics. 
+                            Implemented robust preprocessing pipeline including image normalization, 
+                            augmentation, and landmark detection to standardize input data.
+                        </p>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">PIL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-marker">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Face Detection & Alignment</h4>
+                        <p>
+                            Implemented Haar Cascade classifiers for accurate face detection in real-time. 
+                            Applied facial landmark detection for proper alignment and normalization, 
+                            ensuring consistent input to the CNN model.
+                        </p>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">Haar Cascades</span>
+                            <span class="tech-tag">Dlib</span>
+                            <span class="tech-tag">Face Alignment</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>CNN Model Development</h4>
+                        <p>
+                            Designed and trained a custom Convolutional Neural Network with multiple 
+                            layers for feature extraction and classification. Implemented dropout and 
+                            batch normalization for improved generalization and training stability.
+                        </p>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Keras</span>
+                            <span class="tech-tag">CNN</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-marker">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Training & Optimization</h4>
+                        <p>
+                            Trained the model using Adam optimizer with comprehensive evaluation metrics. 
+                            Implemented cross-validation and hyperparameter tuning to achieve optimal 
+                            performance across all emotion categories.
+                        </p>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">Adam Optimizer</span>
+                            <span class="tech-tag">Cross-validation</span>
+                            <span class="tech-tag">Hyperparameter Tuning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results and testing section -->
+    <section id="results" class="results">
+        <div class="container">
+            <!-- Section header -->
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Results & Performance</h2>
+                <p class="section-subtitle">Comprehensive testing and validation results</p>
+            </div>
+            
+            <!-- Results content -->
+            <div class="results-content">
+                <!-- Performance charts placeholder -->
+                <div class="performance-charts" data-aos="fade-up">
+                    <h3>Model Performance Analysis</h3>
+                    <div class="charts-grid">
+                        <!-- Accuracy chart visualization -->
+                        <div class="chart-card">
+                            <h4>Training Accuracy</h4>
+                            <div class="chart-placeholder">
+                                <div class="accuracy-visual">
+                                    <div class="accuracy-bar" style="height: 90%">
+                                        <span class="accuracy-label">90%</span>
+                                    </div>
+                                </div>
+                                <p>Achieved 90% accuracy on test dataset</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Confusion matrix representation -->
+                        <div class="chart-card">
+                            <h4>Emotion Classification</h4>
+                            <div class="emotion-performance">
+                                <div class="emotion-bar">
+                                    <span class="emotion-name">Happy</span>
+                                    <div class="bar"><div class="fill" style="width: 95%"></div></div>
+                                    <span class="percentage">95%</span>
+                                </div>
+                                <div class="emotion-bar">
+                                    <span class="emotion-name">Sad</span>
+                                    <div class="bar"><div class="fill" style="width: 88%"></div></div>
+                                    <span class="percentage">98%</span>
+                                </div>
+                                <div class="emotion-bar">
+                                    <span class="emotion-name">Angry</span>
+                                    <div class="bar"><div class="fill" style="width: 92%"></div></div>
+                                    <span class="percentage">92%</span>
+                                </div>
+                                <div class="emotion-bar">
+                                    <span class="emotion-name">Surprise</span>
+                                    <div class="bar"><div class="fill" style="width: 89%"></div></div>
+                                    <span class="percentage">96%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testing results -->
+                <div class="testing-results" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Testing & Validation</h3>
+                    <div class="testing-grid">
+                        <div class="test-card">
+                            <div class="test-icon">
+                                <i class="fas fa-vial"></i>
+                            </div>
+                            <h4>Unit Testing</h4>
+                            <p>100% pass rate on component tests with 0.2s average execution time</p>
+                            <div class="test-metric">
+                                <span class="metric-value">100%</span>
+                                <span class="metric-label">Pass Rate</span>
+                            </div>
+                        </div>
+                        
+                        <div class="test-card">
+                            <div class="test-icon">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <h4>Integration Testing</h4>
+                            <p>Seamless module interaction with resolved data format compatibility</p>
+                            <div class="test-metric">
+                                <span class="metric-value">✓</span>
+                                <span class="metric-label">All Passed</span>
+                            </div>
+                        </div>
+                        
+                        <div class="test-card">
+                            <div class="test-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>User Acceptance</h4>
+                            <p>85% accuracy on real-world data with positive user feedback</p>
+                            <div class="test-metric">
+                                <span class="metric-value">85%</span>
+                                <span class="metric-label">Real-world Accuracy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team section -->
+    <!-- <section id="team" class="team">
+        <div class="container"> -->
+            <!-- Section header -->
+            <!-- <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Project Team</h2>
+                <p class="section-subtitle">Collaborative effort by AI & ML students</p>
+            </div> -->
+            
+            <!-- Team members grid -->
+            <!-- <div class="team-grid"> -->
+                <!-- Team member: Shravani R S -->
+                <!-- <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+                    <div class="member-avatar">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h4>Shravani R S</h4>
+                    <p class="member-id">1RR21AI051</p>
+                    <p class="member-role">Lead Developer & CNN Specialist</p>
+                    <div class="member-skills">
+                        <span class="skill-tag">Deep Learning</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">TensorFlow</span>
+                    </div>
+                </div>
+                 -->
+                <!-- Team member: Aisiri P -->
+                <!-- <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+                    <div class="member-avatar">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h4>Aisiri P</h4>
+                    <p class="member-id">1RR21AI005</p>
+                    <p class="member-role">Data Preprocessing Specialist</p>
+                    <div class="member-skills">
+                        <span class="skill-tag">Data Analysis</span>
+                        <span class="skill-tag">OpenCV</span>
+                        <span class="skill-tag">Image Processing</span>
+                    </div>
+                </div> -->
+                
+                <!-- Team member: Basavaraj B C -->
+                <!-- <div class="team-member" data-aos="fade-up" data-aos-delay="300">
+                    <div class="member-avatar">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h4>Basavaraj B C</h4>
+                    <p class="member-id">1RR21AI011</p>
+                    <p class="member-role">Model Architecture Designer</p>
+                    <div class="member-skills">
+                        <span class="skill-tag">Neural Networks</span>
+                        <span class="skill-tag">Keras</span>
+                        <span class="skill-tag">Algorithm Design</span>
+                    </div>
+                </div>
+                 -->
+                <!-- Team member: Manish K Jain -->
+                <!-- <div class="team-member" data-aos="fade-up" data-aos-delay="400">
+                    <div class="member-avatar">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h4>Manish K Jain</h4>
+                    <p class="member-id">1RR21AI029</p>
+                    <p class="member-role">Testing & Validation Lead</p>
+                    <div class="member-skills">
+                        <span class="skill-tag">Model Testing</span>
+                        <span class="skill-tag">Performance Analysis</span>
+                        <span class="skill-tag">Quality Assurance</span>
+                    </div>
+                </div>
+            </div> -->
+            
+            <!-- Project supervision -->
+            <!-- <div class="supervision-info" data-aos="fade-up" data-aos-delay="500">
+                <h3>Project Supervision</h3>
+                <div class="supervisor-card">
+                    <div class="supervisor-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="supervisor-details">
+                        <h4>Prof. Soniya R</h4>
+                        <p>Assistant Professor, Department of AI & ML</p>
+                        <p>RajaRajeswari College of Engineering</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2024 Shravani R S. Facial Expression Recognition Project.</p>
+                </div>
+                <div class="footer-right">
+                    <a href="shravani.html" class="back-link">
+                        <i class="fas fa-arrow-left"></i> Back to Portfolio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="Human Emotion Detection.js"></script>
+</body>
+</html>

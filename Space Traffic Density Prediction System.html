@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for responsiveness and SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Space Traffic Density Prediction using Machine Learning - Internship Project at Rooman Technologies">
+    <title>Space Traffic Density Prediction | AI/ML Project</title>
+    
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="Space Traffic Density Prediction System.css">
+    
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <script src="Space Traffic Density Prediction System.js"></script>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Logo/Brand -->
+            <div class="nav-logo">
+                <i class="fas fa-satellite"></i>
+                <span>Space AI</span>
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="nav-menu" id="nav-menu">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#overview" class="nav-link">Overview</a>
+                <a href="#methodology" class="nav-link">Methodology</a>
+                <a href="#results" class="nav-link">Results</a>
+                <a href="#technologies" class="nav-link">Tech Stack</a>
+                
+                <!-- Back to Portfolio Button -->
+                <a href="shravani.html" class="nav-link back-to-portfolio">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Portfolio
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-background">
+            <!-- Animated stars background -->
+            <div class="stars"></div>
+            <div class="stars2"></div>
+            <div class="stars3"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Space Traffic Density</span>
+                    <span class="highlight">Prediction System</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Leveraging Machine Learning to Predict and Analyze Orbital Congestion 
+                    for Enhanced Space Situational Awareness
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">89.3%</span>
+                        <span class="stat-label">Model Accuracy</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">25K+</span>
+                        <span class="stat-label">Orbital Objects</span>
+                    </div>
+                    <div class="stat-item st1">
+                        <span class="stat-number">10 Years</span>
+                        <span class="stat-label">Data Span</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 3D Orbital Animation Container -->
+            <div class="hero-animation">
+                <div class="orbit-container">
+                    <div class="earth"></div>
+                    <div class="orbit orbit-1">
+                        <div class="satellite sat-1"></div>
+                    </div>
+                    <div class="orbit orbit-2">
+                        <div class="satellite sat-2"></div>
+                    </div>
+                    <div class="orbit orbit-3">
+                        <div class="satellite sat-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Project Overview Section -->
+    <section class="overview" id="overview">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Project Overview</h2>
+                <p class="section-subtitle">Understanding the Challenge of Space Traffic Management</p>
+            </div>
+            
+            <div class="overview-content">
+                <div class="overview-text">
+                    <div class="problem-statement">
+                        <h3>The Challenge</h3>
+                        <p>
+                            With the exponential rise in satellite deployments, particularly in Low Earth Orbit (LEO), 
+                            space traffic management has emerged as one of the most pressing challenges in modern 
+                            aerospace operations. Our project addresses the critical need for proactive orbital 
+                            congestion prediction.
+                        </p>
+                    </div>
+                    
+                    <div class="solution-approach">
+                        <h3>Our Solution</h3>
+                        <p>
+                            We developed a comprehensive machine learning framework that analyzes historical satellite 
+                            data to predict future traffic density patterns, enabling better mission planning and 
+                            collision avoidance strategies.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="overview-highlights">
+                    <div class="highlight-card">
+                        <i class="fas fa-satellite-dish"></i>
+                        <h4>Data Sources</h4>
+                        <p>Space-Track.org, CelesTrak, NASA ODPO</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-brain"></i>
+                        <h4>ML Models</h4>
+                        <p>Decision Tree, Random Forest, LSTM</p>
+                    </div>
+                    <div class="highlight-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Performance</h4>
+                        <p>89.3% Accuracy with Decision Tree</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="methodology" id="methodology">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Methodology</h2>
+                <p class="section-subtitle">Our Data-Driven Approach to Space Traffic Analysis</p>
+            </div>
+            
+            <div class="methodology-timeline">
+                <div class="timeline-item" data-step="1">
+                    <div class="timeline-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Data Collection & Preprocessing</h3>
+                        <p>
+                            Aggregated orbital data from multiple sources including TLE datasets, 
+                            satellite catalogs, and debris tracking systems. Cleaned and standardized 
+                            over 25,000 orbital entries spanning 10 years.
+                        </p>
+                        <ul>
+                            <li>Space-Track.org TLE data parsing</li>
+                            <li>CelesTrak satellite catalogs</li>
+                            <li>Data validation and cleaning</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-step="2">
+                    <div class="timeline-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Exploratory Data Analysis</h3>
+                        <p>
+                            Conducted comprehensive EDA to understand spatial and temporal patterns 
+                            in orbital traffic, identifying congestion hotspots and seasonal trends.
+                        </p>
+                        <ul>
+                            <li>Altitude distribution analysis</li>
+                            <li>Temporal traffic pattern identification</li>
+                            <li>Spatial clustering visualization</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-step="3">
+                    <div class="timeline-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Feature Engineering</h3>
+                        <p>
+                            Transformed raw orbital parameters into meaningful features for machine 
+                            learning models, including derived metrics and temporal features.
+                        </p>
+                        <ul>
+                            <li>Orbital zone classification (LEO/MEO/GEO)</li>
+                            <li>Traffic density binning</li>
+                            <li>Time-series feature creation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-step="4">
+                    <div class="timeline-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Model Development & Training</h3>
+                        <p>
+                            Implemented and compared multiple ML algorithms, optimizing for accuracy 
+                            and interpretability in space traffic density prediction.
+                        </p>
+                        <ul>
+                            <li>Decision Tree Classifier (89.3% accuracy)</li>
+                            <li>Random Forest ensemble methods</li>
+                            <li>LSTM for temporal dependencies</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results" id="results">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Results & Performance</h2>
+                <p class="section-subtitle">Achieving High Accuracy in Space Traffic Prediction</p>
+            </div>
+            
+            <div class="results-grid">
+                <div class="results-chart">
+                    <h3>Model Performance Comparison</h3>
+                    <div class="chart-container">
+                        <div class="performance-bars">
+                            <div class="bar-item">
+                                <span class="bar-label">Decision Tree</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill" data-percentage="89.3"></div>
+                                </div>
+                                <span class="bar-percentage">89.3%</span>
+                            </div>
+                            <div class="bar-item">
+                                <span class="bar-label">Random Forest</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill" data-percentage="86.7"></div>
+                                </div>
+                                <span class="bar-percentage">86.7%</span>
+                            </div>
+                            <div class="bar-item">
+                                <span class="bar-label">Logistic Regression</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill" data-percentage="84.0"></div>
+                                </div>
+                                <span class="bar-percentage">84.0%</span>
+                            </div>
+                            <div class="bar-item">
+                                <span class="bar-label">KNN</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill" data-percentage="82.7"></div>
+                                </div>
+                                <span class="bar-percentage">82.7%</span>
+                            </div>
+                            <div class="bar-item">
+                                <span class="bar-label">SVM</span>
+                                <div class="bar-container">
+                                    <div class="bar-fill" data-percentage="79.3"></div>
+                                </div>
+                                <span class="bar-percentage">79.3%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="key-insights">
+                    <h3>Key Findings</h3>
+                    <div class="insight-cards">
+                        <div class="insight-card">
+                            <div class="insight-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="insight-content">
+                                <h4>Best Performance</h4>
+                                <p>Decision Tree classifier achieved 89.3% accuracy in predicting traffic density levels</p>
+                            </div>
+                        </div>
+                        
+                        <div class="insight-card">
+                            <div class="insight-icon">
+                                <i class="fas fa-crosshairs"></i>
+                            </div>
+                            <div class="insight-content">
+                                <h4>Critical Factors</h4>
+                                <p>Operational status, inclination, and apogee emerged as most influential features</p>
+                            </div>
+                        </div>
+                        
+                        <div class="insight-card">
+                            <div class="insight-icon">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <div class="insight-content">
+                                <h4>Congestion Hotspots</h4>
+                                <p>Sun-synchronous orbits around 800km altitude show highest traffic density</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Technical Metrics -->
+            <div class="technical-metrics">
+                <div class="metric-card">
+                    <i class="fas fa-bullseye"></i>
+                    <div class="metric-content">
+                        <span class="metric-value">89.3%</span>
+                        <span class="metric-label">Accuracy</span>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <i class="fas fa-balance-scale"></i>
+                    <div class="metric-content">
+                        <span class="metric-value">0.92</span>
+                        <span class="metric-label">F1-Score</span>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <i class="fas fa-search-plus"></i>
+                    <div class="metric-content">
+                        <span class="metric-value">0.88</span>
+                        <span class="metric-label">Precision</span>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <i class="fas fa-eye"></i>
+                    <div class="metric-content">
+                        <span class="metric-value">0.91</span>
+                        <span class="metric-label">Recall</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="technologies" id="technologies">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technology Stack</h2>
+                <p class="section-subtitle">Tools and Technologies Used in Development</p>
+            </div>
+            
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h3>Machine Learning & Data Science</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Pandas</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-calculator"></i>
+                            <span>NumPy</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-brain"></i>
+                            <span>Scikit-learn</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Matplotlib</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-palette"></i>
+                            <span>Seaborn</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3>Data Sources & APIs</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <i class="fas fa-satellite"></i>
+                            <span>Space-Track.org</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-globe"></i>
+                            <span>CelesTrak</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-rocket"></i>
+                            <span>NASA ODPO</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-satellite-dish"></i>
+                            <span>ESA DISCOS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3>Visualization & Analysis</h3>
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Plotly</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-map"></i>
+                            <span>Kepler.gl</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-cube"></i>
+                            <span>3D Plotting</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-layer-group"></i>
+                            <span>Dash</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-satellite"></i>
+                        <span>Space Traffic AI</span>
+                    </div>
+                    <p class="footer-description">
+                        Advanced machine learning solutions for space situational awareness 
+                        and orbital traffic management.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Project Details</h4>
+                    <ul class="footer-links">
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#methodology">Methodology</a></li>
+                        <li><a href="#results">Results</a></li>
+                        <li><a href="#technologies">Technologies</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="shravani.html" class="back-link">
+                                <i class="fas fa-arrow-left"></i>
+                                Back to Portfolio
+                            </a>
+                        </li>
+                        <li><a href="#hero">Back to Top</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Internship Details</h4>
+                    <p><strong>Organization:</strong> Rooman Technologies</p>
+                    <p><strong>Duration:</strong> 2024-2025</p>
+                    <p><strong>Student:</strong> Shravani R S</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Space Traffic Density Prediction Project. Created during internship at Rooman Technologies.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript Link -->
+    <script src="Space Traffic Density Prediction System.js"></script>
+</body>
+</html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biometric Watermarking | Rubik's Cube Encryption</title>
+    <link rel="stylesheet" href="Biometric Watermarking System.css">
+    <!-- Font imports for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Icons for enhanced UI -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <script src="Biometric Watermarking System.js"></script>
+
+    <!-- Navigation Bar with glassmorphism effect -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo/Brand with animated cube icon -->
+            <div class="nav-brand">
+                <div class="cube-icon">
+                    <i class="fas fa-cube"></i>
+                </div>
+                <span class="brand-text">BioSecure</span>
+            </div>
+            
+            <!-- Navigation links -->
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#architecture" class="nav-link">Architecture</a>
+                <a href="#results" class="nav-link">Results</a>
+                <!-- Back to main portfolio button with special styling -->
+                <a href="shravani.html" class="nav-link portfolio-link">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Portfolio
+                </a>
+            </div>
+            
+            <!-- Mobile menu toggle -->
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with animated background -->
+    <section id="home" class="hero-section">
+        <div class="hero-background">
+            <!-- Animated particles/nodes for tech aesthetic -->
+            <div class="particles-container">
+                <canvas id="particles-canvas"></canvas>
+            </div>
+        </div>
+        
+        <div class="hero-content">
+            <!-- Main heading with typing animation effect -->
+            <h1 class="hero-title">
+                <span class="title-line">Biometric Watermarking</span>
+                <span class="title-line accent">Using Rubik's Cube</span>
+                <span class="title-line">Encryption & Decryption</span>
+            </h1>
+            
+            <!-- Subtitle with project description -->
+            <p class="hero-subtitle">
+                Advanced Multi-Layered Security Framework combining CNN-based Feature Extraction 
+                with Innovative Cryptographic Techniques for Ultimate Data Protection
+            </p>
+            
+            <!-- Action buttons with hover effects -->
+            <div class="hero-actions">
+                <button class="cta-primary" onclick="scrollToSection('about')">
+                    <i class="fas fa-play"></i>
+                    Explore Project
+                </button>
+                <button class="cta-secondary" onclick="scrollToSection('architecture')">
+                    <i class="fas fa-cog"></i>
+                    View Architecture
+                </button>
+            </div>
+            
+            <!-- Technical stats display -->
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">99.7%</div>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">256-bit</div>
+                    <div class="stat-label">Encryption</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">Multi</div>
+                    <div class="stat-label">Biometric</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section with project overview -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Project Overview</h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <div class="about-grid">
+                <!-- Project description -->
+                <div class="about-content">
+                    <div class="content-card">
+                        <h3>Advanced Security Solution</h3>
+                        <p>
+                            This innovative project addresses critical security challenges in biometric data protection
+                            through the integration of Rubik's Cube-based encryption with cutting-edge biometric 
+                            authentication technologies. The system leverages iris and fingerprint authentication 
+                            powered by Convolutional Neural Networks (CNNs) for superior accuracy and reliability.
+                        </p>
+                        
+                        <h3>Key Innovations</h3>
+                        <ul class="innovation-list">
+                            <li><i class="fas fa-shield-alt"></i>Zero-bit watermarking for data integrity</li>
+                            <li><i class="fas fa-cube"></i>Rubik's Cube encryption algorithm</li>
+                            <li><i class="fas fa-eye"></i>Dual biometric authentication (Iris + Fingerprint)</li>
+                            <li><i class="fas fa-brain"></i>CNN-powered feature extraction</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Visual representation -->
+                <div class="about-visual">
+                    <div class="visual-container">
+                        <!-- Animated Rubik's cube representation -->
+                        <div class="rubik-cube">
+                            <div class="cube-face front"></div>
+                            <div class="cube-face back"></div>
+                            <div class="cube-face left"></div>
+                            <div class="cube-face right"></div>
+                            <div class="cube-face top"></div>
+                            <div class="cube-face bottom"></div>
+                        </div>
+                        
+                        <!-- Biometric icons -->
+                        <div class="biometric-icons">
+                            <div class="bio-icon fingerprint">
+                                <i class="fas fa-fingerprint"></i>
+                            </div>
+                            <div class="bio-icon iris">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Advanced Features</h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <!-- Features grid with interactive cards -->
+            <div class="features-grid">
+                <div class="feature-card" data-feature="encryption">
+                    <div class="feature-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Rubik's Cube Encryption</h3>
+                    <p>Dynamic scrambling algorithm providing multi-dimensional security layers</p>
+                    <div class="feature-details">
+                        <span class="tech-tag">XOR Encryption</span>
+                        <span class="tech-tag">Dynamic Keys</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card" data-feature="biometric">
+                    <div class="feature-icon">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <h3>Dual Biometric Auth</h3>
+                    <p>Iris and fingerprint recognition with CNN-based feature extraction</p>
+                    <div class="feature-details">
+                        <span class="tech-tag">CNN</span>
+                        <span class="tech-tag">Multi-Modal</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card" data-feature="watermarking">
+                    <div class="feature-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Zero-Bit Watermarking</h3>
+                    <p>Invisible data embedding without compromising original image quality</p>
+                    <div class="feature-details">
+                        <span class="tech-tag">DWT</span>
+                        <span class="tech-tag">SVD</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card" data-feature="security">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Multi-Layer Security</h3>
+                    <p>Comprehensive protection against tampering and unauthorized access</p>
+                    <div class="feature-details">
+                        <span class="tech-tag">OTP</span>
+                        <span class="tech-tag">Telegram</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card" data-feature="processing">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Advanced Processing</h3>
+                    <p>Edge detection, normalization, and feature extraction pipeline</p>
+                    <div class="feature-details">
+                        <span class="tech-tag">Canny</span>
+                        <span class="tech-tag">Hough</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card" data-feature="authentication">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>Secure Authentication</h3>
+                    <p>Real-time identity verification with high accuracy rates</p>
+                    <div class="feature-details">
+                        <span class="tech-tag">PSNR</span>
+                        <span class="tech-tag">BER</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="architecture-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">System Architecture</h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <!-- Interactive flow diagram -->
+            <div class="architecture-container">
+                <div class="flow-diagram">
+                    <!-- Input stage -->
+                    <div class="flow-stage" data-stage="input">
+                        <div class="stage-content">
+                            <h4>Input Collection</h4>
+                            <div class="stage-icons">
+                                <div class="input-icon fingerprint-input">
+                                    <i class="fas fa-fingerprint"></i>
+                                    <span>Fingerprint</span>
+                                </div>
+                                <div class="input-icon iris-input">
+                                    <i class="fas fa-eye"></i>
+                                    <span>Iris Scan</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Processing stage -->
+                    <div class="flow-stage" data-stage="processing">
+                        <div class="stage-content">
+                            <h4>Feature Extraction</h4>
+                            <div class="processing-pipeline">
+                                <div class="process-step">
+                                    <i class="fas fa-adjust"></i>
+                                    <span>Grayscale</span>
+                                </div>
+                                <div class="process-step">
+                                    <i class="fas fa-search"></i>
+                                    <span>Edge Detection</span>
+                                </div>
+                                <div class="process-step">
+                                    <i class="fas fa-brain"></i>
+                                    <span>CNN</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Encryption stage -->
+                    <div class="flow-stage" data-stage="encryption">
+                        <div class="stage-content">
+                            <h4>Encryption Process</h4>
+                            <div class="encryption-visual">
+                                <div class="mini-cube">
+                                    <i class="fas fa-cube"></i>
+                                </div>
+                                <div class="encryption-steps">
+                                    <span>Rubik's Algorithm</span>
+                                    <span>XOR Encryption</span>
+                                    <span>Watermarking</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Output stage -->
+                    <div class="flow-stage" data-stage="output">
+                        <div class="stage-content">
+                            <h4>Secure Output</h4>
+                            <div class="output-options">
+                                <div class="output-item">
+                                    <i class="fas fa-database"></i>
+                                    <span>Database</span>
+                                </div>
+                                <div class="output-item">
+                                    <i class="fas fa-share-alt"></i>
+                                    <span>Transmission</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Technical specifications panel -->
+                <div class="tech-specs">
+                    <h3>Technical Specifications</h3>
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <strong>Algorithm:</strong>
+                            <span>CNN + Rubik's Cube</span>
+                        </div>
+                        <div class="spec-item">
+                            <strong>Security:</strong>
+                            <span>256-bit Encryption</span>
+                        </div>
+                        <div class="spec-item">
+                            <strong>Accuracy:</strong>
+                            <span>99.7% Recognition</span>
+                        </div>
+                        <div class="spec-item">
+                            <strong>Processing:</strong>
+                            <span>Real-time</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="results-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Project Results</h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <!-- Results showcase with interactive elements -->
+            <div class="results-grid">
+                <!-- Performance metrics -->
+                <div class="result-card metrics-card">
+                    <h3>Performance Metrics</h3>
+                    <div class="metrics-display">
+                        <div class="metric-item">
+                            <div class="metric-value">99.7%</div>
+                            <div class="metric-label">CNN Accuracy</div>
+                            <div class="metric-bar">
+                                <div class="metric-fill" style="width: 99.7%"></div>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">95.2%</div>
+                            <div class="metric-label">Validation Score</div>
+                            <div class="metric-bar">
+                                <div class="metric-fill" style="width: 95.2%"></div>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">0.003</div>
+                            <div class="metric-label">Loss Rate</div>
+                            <div class="metric-bar">
+                                <div class="metric-fill loss" style="width: 15%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Security features -->
+                <div class="result-card security-card">
+                    <h3>Security Features</h3>
+                    <div class="security-list">
+                        <div class="security-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>OTP Authentication via Telegram</span>
+                        </div>
+                        <div class="security-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Zero-bit Watermarking</span>
+                        </div>
+                        <div class="security-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Rubik's Cube Encryption</span>
+                        </div>
+                        <div class="security-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Multi-layer Authentication</span>
+                        </div>
+                        <div class="security-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Tamper-resistant Design</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Process demonstration -->
+                <div class="result-card demo-card">
+                    <h3>Process Demonstration</h3>
+                    <div class="demo-steps">
+                        <div class="demo-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Data Input</h4>
+                                <p>Upload biometric images</p>
+                            </div>
+                        </div>
+                        <div class="demo-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Encryption</h4>
+                                <p>Apply Rubik's algorithm</p>
+                            </div>
+                        </div>
+                        <div class="demo-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Verification</h4>
+                                <p>OTP-based authentication</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Technologies used -->
+                <div class="result-card tech-card chumbu">
+                    <h3>Technologies Used</h3>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-eye"></i>
+                            <span>OpenCV</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-calculator"></i>
+                            <span>NumPy</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-brain"></i>
+                            <span>CNN</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-wave-square"></i>
+                            <span>DWT/SVD</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-telegram"></i>
+                            <span>Telegram API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Future scope section -->
+            <div class="future-scope">
+                <h3>Future Scope & Applications</h3>
+                <div class="scope-grid">
+                    <div class="scope-item">
+                        <i class="fas fa-hospital"></i>
+                        <h4>Healthcare</h4>
+                        <p>Secure patient data and medical records</p>
+                    </div>
+                    <div class="scope-item">
+                        <i class="fas fa-university"></i>
+                        <h4>Banking</h4>
+                        <p>Enhanced financial transaction security</p>
+                    </div>
+                    <div class="scope-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Government</h4>
+                        <p>National security and identity verification</p>
+                    </div>
+                    <div class="scope-item">
+                        <i class="fas fa-cloud"></i>
+                        <h4>Cloud Security</h4>
+                        <p>Scalable biometric authentication systems</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with links back to portfolio -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BioSecure Project</h3>
+                    <p>Advanced Biometric Watermarking using Rubik's Cube Encryption</p>
+                    <div class="project-info">
+                        <span>Visvesvaraya Technological University</span>
+                        <span>Department of AI & ML</span>
+                        <span>2024-2025</span>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#features">Features</a>
+                        <a href="#architecture">Architecture</a>
+                        <a href="#results">Results</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <div class="portfolio-nav">
+                        <a href="shravani.html" class="portfolio-link-footer">
+                            <i class="fas fa-arrow-left"></i>
+                            Back to Portfolio
+                        </a>
+                        <!-- <a href="shravani.html" class="projects-link">
+                            <i class="fas fa-folder"></i>
+                            All Projects
+                        </a> -->
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2024 Shravani R S | Final Year Project | AI & ML Department</p>
+                </div>
+                <div class="footer-tech">
+                    <span>Built with HTML5, CSS3, JavaScript</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="back-to-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript for interactivity -->
+    <script src="Biometric Watermarking System.js"></script>
+</body>
+</html>
