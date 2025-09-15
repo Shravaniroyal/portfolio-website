@@ -1,14 +1,5 @@
-/* =============================================================================
-   SHRAVANI R S - AI ENGINEER PORTFOLIO
-   JavaScript File - Interactive Functionality & Animations
-   =============================================================================
-*/
 
-/* =============================================================================
-   DOM CONTENT LOADED EVENT LISTENER
-   Ensures all JavaScript runs after the DOM is fully loaded
-   =============================================================================
-*/
+
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all portfolio functionality
     initializeNavigation();
@@ -906,8 +897,395 @@ if (window.location.hostname === 'localhost' || window.location.hostname === '12
     console.log('%cFor any issues, contact: rsshravani04@gmail.com', 'color: #6b7280; font-size: 12px;');
 }
 
+
+/* ===== RESPONSIVE JAVASCRIPT ENHANCEMENTS ===== */
+
+// Add these functions to your existing JavaScript file
+
+/* 1. Enhanced Mobile Menu Functionality */
+function enhancedMobileMenuSetup() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const body = document.body;
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+            }
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+            }
+        });
+
+        // Close menu when clicking nav links
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+        });
+    }
+}
+
+/* 2. Responsive Viewport Height Fix for Mobile */
+function setResponsiveViewportHeight() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    
+    // Update hero section height
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        hero.style.minHeight = `calc(var(--vh, 1vh) * 100)`;
+    }
+}
+
+/* 3. Touch Device Detection and Optimization */
+function optimizeForTouchDevices() {
+    // Detect touch device
+    const isTouchDevice = ('ontouchstart' in window) || 
+                         (navigator.maxTouchPoints > 0) || 
+                         (navigator.msMaxTouchPoints > 0);
+    
+    if (isTouchDevice) {
+        document.body.classList.add('touch-device');
+        
+        // Remove hover effects on touch devices
+        const hoverElements = document.querySelectorAll('.project-card, .skill-category, .btn');
+        hoverElements.forEach(element => {
+            element.addEventListener('touchstart', function() {
+                this.classList.add('touch-active');
+            });
+            
+            element.addEventListener('touchend', function() {
+                setTimeout(() => {
+                    this.classList.remove('touch-active');
+                }, 300);
+            });
+        });
+    }
+}
+
+/* 4. Enhanced Responsive Font Scaling */
+function responsiveFontScaling() {
+    const updateFontSizes = () => {
+        const screenWidth = window.innerWidth;
+        const root = document.documentElement;
+        
+        // Adjust base font size based on screen width
+        if (screenWidth < 480) {
+            root.style.fontSize = '14px';
+        } else if (screenWidth < 768) {
+            root.style.fontSize = '15px';
+        } else if (screenWidth < 1024) {
+            root.style.fontSize = '16px';
+        } else {
+            root.style.fontSize = '16px';
+        }
+    };
+    
+    updateFontSizes();
+    window.addEventListener('resize', debounce(updateFontSizes, 250));
+}
+
+/* 5. Mobile-Optimized Scroll Animations */
+function mobileScrollAnimations() {
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+        // Reduce animation complexity on mobile
+        const complexAnimations = document.querySelectorAll('.particle, .neural-network');
+        complexAnimations.forEach(element => {
+            element.style.display = 'none';
+        });
+        
+        // Simplify intersection observer for mobile
+        const mobileObserverOptions = {
+            threshold: 0.05,
+            rootMargin: '0px 0px -20px 0px'
+        };
+        
+        const mobileObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, mobileObserverOptions);
+        
+        const animatedElements = document.querySelectorAll('.timeline-item, .project-card, .skill-category');
+        animatedElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            mobileObserver.observe(element);
+        });
+    }
+}
+
+/* 6. Responsive Image and Media Loading */
+function responsiveMediaLoading() {
+    const images = document.querySelectorAll('img');
+    const videos = document.querySelectorAll('video');
+    
+    // Lazy load images on mobile
+    if (window.innerWidth <= 768) {
+        images.forEach(img => {
+            if (!img.hasAttribute('loading')) {
+                img.setAttribute('loading', 'lazy');
+            }
+        });
+        
+        videos.forEach(video => {
+            video.setAttribute('preload', 'metadata');
+        });
+    }
+}
+
+/* 7. Orientation Change Handler */
+function handleOrientationChange() {
+    const handleChange = () => {
+        // Delay to ensure viewport dimensions are updated
+        setTimeout(() => {
+            setResponsiveViewportHeight();
+            
+            // Recalculate layouts if needed
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent && window.innerWidth <= 896 && window.innerHeight <= 500) {
+                heroContent.style.gap = '1rem';
+            } else if (heroContent) {
+                heroContent.style.gap = '';
+            }
+            
+            // Close mobile menu on orientation change
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            if (hamburger && navMenu) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        }, 100);
+    };
+    
+    window.addEventListener('orientationchange', handleChange);
+    window.addEventListener('resize', debounce(handleChange, 250));
+}
+
+/* 8. Enhanced Form Responsiveness */
+function enhanceFormResponsiveness() {
+    const formInputs = document.querySelectorAll('input, textarea');
+    
+    formInputs.forEach(input => {
+        // Prevent zoom on iOS when focusing inputs
+        if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+            if (parseFloat(window.getComputedStyle(input).fontSize) < 16) {
+                input.style.fontSize = '16px';
+            }
+        }
+        
+        // Enhanced mobile keyboard handling
+        input.addEventListener('focus', () => {
+            if (window.innerWidth <= 768) {
+                // Scroll input into view on mobile
+                setTimeout(() => {
+                    input.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }, 300);
+            }
+        });
+    });
+}
+
+/* 9. Performance Optimization for Mobile */
+function mobilePerformanceOptimizations() {
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+        // Reduce particle count
+        const particleContainer = document.querySelector('.particles-container');
+        if (particleContainer) {
+            const particles = particleContainer.querySelectorAll('.particle');
+            particles.forEach((particle, index) => {
+                if (index > 2) { // Keep only first 3 particles
+                    particle.remove();
+                }
+            });
+        }
+        
+        // Disable complex animations on low-end devices
+        if (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4) {
+            document.body.classList.add('reduced-animations');
+        }
+    }
+}
+
+/* 10. Responsive Grid Recalculation */
+function responsiveGridRecalculation() {
+    const grids = document.querySelectorAll('.skills-grid, .projects-grid, .about-stats');
+    
+    const recalculateGrids = () => {
+        grids.forEach(grid => {
+            const screenWidth = window.innerWidth;
+            
+            if (grid.classList.contains('skills-grid')) {
+                if (screenWidth <= 480) {
+                    grid.style.gridTemplateColumns = '1fr';
+                } else if (screenWidth <= 768) {
+                    grid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(250px, 1fr))';
+                } else {
+                    grid.style.gridTemplateColumns = '';
+                }
+            }
+            
+            if (grid.classList.contains('about-stats')) {
+                if (screenWidth <= 480) {
+                    grid.style.gridTemplateColumns = '1fr';
+                } else if (screenWidth <= 768) {
+                    grid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+                } else {
+                    grid.style.gridTemplateColumns = '';
+                }
+            }
+        });
+    };
+    
+    recalculateGrids();
+    window.addEventListener('resize', debounce(recalculateGrids, 250));
+}
+
+/* 11. Mobile-Optimized Smooth Scrolling */
+function mobileOptimizedScrolling() {
+    // Enhance smooth scrolling for mobile
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                const offsetTop = targetElement.offsetTop - 70; // Account for fixed navbar
+                
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+}
+
+/* 12. Safe Area Insets for Modern Mobile Devices */
+function handleSafeAreaInsets() {
+    // Handle iPhone X and similar devices with notches
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        navbar.style.paddingTop = 'env(safe-area-inset-top)';
+    }
+    
+    // Add safe area support to CSS
+    const style = document.createElement('style');
+    style.textContent = `
+        @supports(padding: max(0px)) {
+            .navbar {
+                padding-left: max(15px, env(safe-area-inset-left));
+                padding-right: max(15px, env(safe-area-inset-right));
+            }
+            
+            .container {
+                padding-left: max(15px, env(safe-area-inset-left));
+                padding-right: max(15px, env(safe-area-inset-right));
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+/* 13. Initialize All Responsive Enhancements */
+function initializeResponsiveEnhancements() {
+    enhancedMobileMenuSetup();
+    setResponsiveViewportHeight();
+    optimizeForTouchDevices();
+    responsiveFontScaling();
+    mobileScrollAnimations();
+    responsiveMediaLoading();
+    handleOrientationChange();
+    enhanceFormResponsiveness();
+    mobilePerformanceOptimizations();
+    responsiveGridRecalculation();
+    mobileOptimizedScrolling();
+    handleSafeAreaInsets();
+}
+
+/* 14. Enhanced Debounce Function */
+function debounce(func, delay) {
+    let timeoutId;
+    return function(...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => func.apply(this, args), delay);
+    };
+}
+
+/* 15. Initialize on DOM Content Loaded */
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize your existing functions first
+    initializeNavigation();
+    initializeHeroAnimations();
+    initializeScrollAnimations();
+    initializeSkillAnimations();
+    initializeStatsCounter();
+    initializeContactForm();
+    initializeParticles();
+    initializeThemeEffects();
+    
+    // Then initialize responsive enhancements
+    initializeResponsiveEnhancements();
+});
+
+/* 16. Handle Resize Events */
+window.addEventListener('resize', debounce(() => {
+    setResponsiveViewportHeight();
+    
+    // Reinitialize animations if needed
+    const animatedElements = document.querySelectorAll('.animate');
+    if (window.innerWidth !== window.lastWidth) {
+        animatedElements.forEach(element => {
+            element.classList.remove('animate');
+        });
+        
+        setTimeout(() => {
+            initializeScrollAnimations();
+        }, 100);
+    }
+    
+    window.lastWidth = window.innerWidth;
+}, 250));
+
 /* =============================================================================
    END OF JAVASCRIPT FILE
    All interactive functionality initialized
    =============================================================================
+
 */
